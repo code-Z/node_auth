@@ -6,8 +6,10 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.post('/save_hotel', function (req, res, next) {
-  //save the hotel entry along with the user record
-})
+router.get('/save_hotel', function (req, res, next) {
+  // if (!req.isAuthenticated())
+  //   return res.json({ result: false, message: 'Unauthorized access!', data: null });
+  console.log(req.user);
+});
 
 module.exports = router;
