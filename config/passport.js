@@ -18,7 +18,8 @@ module.exports = function (passport) {
   passport.use(new FacebookStrategy({
     clientID     : configAuth.facebookAuth.clientID,
     clientSecret : configAuth.facebookAuth.clientSecret,
-    callbackURL  : configAuth.facebookAuth.callbackURL
+    callbackURL  : configAuth.facebookAuth.callbackURL,
+    profileFields: ['id', 'email', 'gender', 'link', 'locale', 'name', 'timezone', 'updated_time', 'verified']
   },
   function (token, refreshToken, profile, done) {
     process.nextTick(function () {
